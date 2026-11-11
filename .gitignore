@@ -1,0 +1,3 @@
+# Local secret files (copy from *.example.yaml and fill in).
+secret-*.yaml
+!secret-*.example.yaml

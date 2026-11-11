@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: flixflox-telegram-api
+  labels:
+    app: flixflox-telegram-api
+    version: v1
+spec:
+  replicas: 1
+  revisionHistoryLimit: 0
+  selector:
+    matchLabels:
+      app: flixflox-telegram-api
+      version: v1
+  template:
+    metadata:
+      labels:
+        app: flixflox-telegram-api
+        version: v1
+    spec:
+      containers:
+        - name: flixflox-telegram-api
+          image: aiogram/telegram-bot-api:latest
+          imagePullPolicy: IfNotPresent
+          ports:
+            - name: http
+              containerPort: 8081
+          envFrom:
+            - secretRef:
+                name: flixflox-telegram-api
+          resources:
+            requests:
+              cpu: 100m
+              memory: 100Mi
+          volumeMounts:
+            - name: telegram-data
+              mountPath: /var/lib/telegram-bot-api
+      volumes:
+        - name: telegram-data
+          persistentVolumeClaim:
+            claimName: telegram-data
