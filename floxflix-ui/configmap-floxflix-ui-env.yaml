@@ -1,9 +1,9 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: flixflox-ui-env
+  name: floxflix-ui-env
 data:
-  VITE_STREAMAPI_URL: "http://api.flixflox.lan"
+  VITE_STREAMAPI_URL: "http://api.floxflix.lan"
   VITE_STREAMAPI_PREFIX: "/v1/api"
   VITE_STREAMAPI_PREFIX_ADMIN: "/dashboard"
   VITE_DEFAULT_NEXT_EPISODE_OFFSET: "15"

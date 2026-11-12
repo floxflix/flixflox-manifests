@@ -1,19 +1,19 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: flixflox-ui-ingress
+  name: floxflix-ui-ingress
   annotations:
     nginx.ingress.kubernetes.io/proxy-body-size: "0" 
 spec:
   ingressClassName: nginx
   rules:
-  - host: flixflox.lan
+  - host: floxflix.lan
     http:
       paths:
       - path: /
         pathType: Prefix
         backend:
           service:
-            name: flixflox-ui
+            name: floxflix-ui
             port:
               number: 80

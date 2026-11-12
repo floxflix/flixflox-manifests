@@ -1,23 +1,23 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: flixflox-ui
+  name: floxflix-ui
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: flixflox-ui
+      app: floxflix-ui
   template:
     metadata:
       labels:
-        app: flixflox-ui
+        app: floxflix-ui
     spec:
       containers:
-        - name:  flixflox-ui
-          image: elvus/flixflox-ui:1.2.1
+        - name:  floxflix-ui
+          image: elvus/floxflix-ui:1.2.1
           imagePullPolicy: Always
           envFrom:
             - configMapRef:
-                name: flixflox-ui-env
+                name: floxflix-ui-env
           ports:
             - containerPort: 80

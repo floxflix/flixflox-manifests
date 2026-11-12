@@ -3,7 +3,7 @@ kind: PersistentVolumeClaim
 metadata:
   name: telegram-data
   labels:
-    app.kubernetes.io/name: flixflox-telegram-bot
+    app.kubernetes.io/name: floxflix-telegram-bot
     app.kubernetes.io/component: telegram-bot-api
 spec:
   accessModes:

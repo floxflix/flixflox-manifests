@@ -1,33 +1,33 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: flixflox-telegram-bot
+  name: floxflix-telegram-bot
   labels:
-    app: flixflox-telegram-bot
+    app: floxflix-telegram-bot
     version: v1
 spec:
   replicas: 1
   revisionHistoryLimit: 0
   selector:
     matchLabels:
-      app: flixflox-telegram-bot
+      app: floxflix-telegram-bot
       version: v1
   template:
     metadata:
       labels:
-        app: flixflox-telegram-bot
+        app: floxflix-telegram-bot
         version: v1
     spec:
       securityContext:
         runAsUser: 101
         runAsGroup: 101
       containers:
-        - name: flixflox-telegram-bot
-          image: elvus/flixflox-telegram-bot:1.0.1
+        - name: floxflix-telegram-bot
+          image: elvus/floxflix-telegram-bot:1.0.1
           imagePullPolicy: Always
           envFrom:
             - secretRef:
-                name: flixflox-telegram-bot
+                name: floxflix-telegram-bot
           volumeMounts:
             - name: videos
               mountPath: /app/videos

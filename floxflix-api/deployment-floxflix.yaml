@@ -1,26 +1,26 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: flixflox
+  name: floxflix
   labels:
-    app: flixflox
+    app: floxflix
     version: v1
 spec:
   replicas: 1
   revisionHistoryLimit: 0
   selector:
     matchLabels:
-      app: flixflox
+      app: floxflix
       version: v1
   template:
     metadata:
       labels:
-        app: flixflox
+        app: floxflix
         version: v1
     spec:
       containers:
-        - name: flixflox
-          image: elvus/flixflox:2.0.1
+        - name: floxflix
+          image: elvus/floxflix:2.0.1
           imagePullPolicy: Always
           ports:
             - containerPort: 7777
@@ -34,15 +34,15 @@ spec:
             - name: JWT_SECRET_KEY
               valueFrom:
                 secretKeyRef:
-                  name: flixflox-secret
+                  name: floxflix-secret
                   key: JWT_SECRET_KEY
             - name: MONGO_URI
               valueFrom:
                 secretKeyRef:
-                  name: flixflox-secret
+                  name: floxflix-secret
                   key: MONGO_CONNECTION_STRING
             - name: CORS_ORIGIN
-              value: "http://flixflox.lan"
+              value: "http://floxflix.lan"
             - name: PORT
               value: "7777"
           resources:

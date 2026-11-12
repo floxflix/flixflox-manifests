@@ -1,13 +1,13 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: flixflox
+  name: floxflix
   labels:
-    app: flixflox
+    app: floxflix
     version: v1
 spec:
   selector:
-    app: flixflox
+    app: floxflix
     version: v1
   ports:
     - protocol: TCP
